@@ -45,17 +45,6 @@ nav a{
 
 nav a:hover{ text-decoration: underline; }
 
-/* ---- Home hero layout ---- */
-.hero{
-  display: grid;
-  grid-template-columns: 0.75fr 1.65fr; /* text | figure */
-  gap: 48px;
-  align-items: center;
-  margin-top: 10px;
-}
-
-
-
 .intro{
   text-align: center;
   font-size: 1.05rem;
@@ -70,29 +59,6 @@ nav a:hover{ text-decoration: underline; }
   text-decoration: none;
 }
 .links a:hover{ text-decoration: underline; }
-
-.hero-media{
-  display: grid;
-  gap: 14px;
-  justify-items: center;
-}
-
-.hero-media img{
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  display: block;
-}
-
-.hero-media{
-  justify-self: end;   /* pushes the entire figure block right */
-}
-
-
-.probe{
-  max-width: 240px;
-  opacity: 0.95;
-}
 
 /* ---- Inner pages ---- */
 .section{
@@ -120,28 +86,47 @@ footer{
   font-size: 0.9rem;
 }
 
-/* ---- Ephys + probe figure ---- */
-.figure-row{
+
+/* ---- Hero layout: hard center split ---- */
+.hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* exact 50 / 50 split */
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Left text column */
+.intro{
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Right ephys column */
+.ephys-block{
+  display: flex;
+  justify-content: flex-start; /* start exactly at center */
+}
+
+/* Traces + probe grouped tightly */
+.ephys-row{
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px; /* space between gif and probe */
+  gap: 4px; /* ~2–4 px visual separation */
 }
 
+/* Ephys GIF */
 .ephys-gif{
   width: 100%;
-  max-width: 720px;    /* BIGGER */
+  max-width: 620px;
   height: auto;
   display: block;
-  margin-left: 60px;  /* strong rightward push */
 }
 
-
-/* Probe next to traces */
+/* Probe immediately adjacent */
 .probe{
-  max-width: 130px;   /* slim, vertical */
+  max-width: 130px;
   height: auto;
-  align-self: center;
 }
 
 
