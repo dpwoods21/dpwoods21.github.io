@@ -2,7 +2,7 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
-  --maxw: 980px;
+  --maxw: 1080px;
 }
 
 *{ box-sizing: border-box; }
@@ -113,6 +113,30 @@ footer{
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+/* ---- Ephys + probe figure ---- */
+.figure-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px; /* space between gif and probe */
+}
+
+/* Make the ephys gif larger and primary */
+.ephys-gif{
+  width: 100%;
+  max-width: 560px;   /* <-- increase size here */
+  height: auto;
+  display: block;
+}
+
+/* Probe next to traces */
+.probe{
+  max-width: 140px;   /* slim, vertical */
+  height: auto;
+  align-self: center;
+}
+
 
 /* ---- Responsive ---- */
 @media (max-width: 860px){
