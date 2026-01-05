@@ -1,23 +1,29 @@
 body {
   font-family: Georgia, serif;
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 40px;
   line-height: 1.6;
   color: #222;
+  text-align: center;   /* THIS centers text */
 }
 
 header h1 {
-  margin-bottom: 0;
+  margin-bottom: 0.2em;
 }
 
 .subtitle {
   color: #555;
+  font-size: 1.1em;
   margin-top: 0;
 }
 
+nav {
+  margin: 25px 0;
+}
+
 nav a {
-  margin-right: 15px;
+  margin: 0 12px;
   text-decoration: none;
   color: #0056b3;
 }
@@ -26,12 +32,16 @@ nav a:hover {
   text-decoration: underline;
 }
 
-h2 {
+main {
   margin-top: 40px;
 }
 
+section {
+  margin-bottom: 50px;
+}
+
 footer {
-  margin-top: 60px;
+  margin-top: 80px;
   font-size: 0.9em;
   color: #666;
 }
