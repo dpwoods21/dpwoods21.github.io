@@ -48,12 +48,12 @@ nav a:hover{ text-decoration: underline; }
 /* ---- Home hero layout ---- */
 .hero{
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 26px;
+  grid-template-columns: 0.9fr 1.3fr;  /* text | figure */
+  gap: 36px;
   align-items: center;
-  justify-content: center;
   margin-top: 6px;
 }
+
 
 .intro{
   text-align: center;
@@ -122,12 +122,12 @@ footer{
   gap: 18px; /* space between gif and probe */
 }
 
-/* Make the ephys gif larger and primary */
 .ephys-gif{
   width: 100%;
-  max-width: 560px;   /* <-- increase size here */
+  max-width: 620px;   /* make it bigger */
   height: auto;
   display: block;
+  margin-left: 30px;  /* <-- nudges traces right */
 }
 
 /* Probe next to traces */
