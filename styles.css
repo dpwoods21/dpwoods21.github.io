@@ -2,7 +2,7 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
-  --maxw: 1080px;
+  --maxw: 1180px;
 }
 
 *{ box-sizing: border-box; }
@@ -48,11 +48,12 @@ nav a:hover{ text-decoration: underline; }
 /* ---- Home hero layout ---- */
 .hero{
   display: grid;
-  grid-template-columns: 0.9fr 1.3fr;  /* text | figure */
-  gap: 36px;
+  grid-template-columns: 0.75fr 1.65fr; /* text | figure */
+  gap: 48px;
   align-items: center;
-  margin-top: 6px;
+  margin-top: 10px;
 }
+
 
 
 .intro{
@@ -82,6 +83,11 @@ nav a:hover{ text-decoration: underline; }
   height: auto;
   display: block;
 }
+
+.hero-media{
+  justify-self: end;   /* pushes the entire figure block right */
+}
+
 
 .probe{
   max-width: 240px;
@@ -124,15 +130,16 @@ footer{
 
 .ephys-gif{
   width: 100%;
-  max-width: 620px;   /* make it bigger */
+  max-width: 720px;    /* BIGGER */
   height: auto;
   display: block;
-  margin-left: 30px;  /* <-- nudges traces right */
+  margin-left: 60px;  /* strong rightward push */
 }
+
 
 /* Probe next to traces */
 .probe{
-  max-width: 140px;   /* slim, vertical */
+  max-width: 130px;   /* slim, vertical */
   height: auto;
   align-self: center;
 }
