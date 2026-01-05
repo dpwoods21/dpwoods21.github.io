@@ -5,7 +5,9 @@
   --maxw: 1100px;
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
   margin: 0;
@@ -15,7 +17,7 @@ body{
   line-height: 1.6;
 }
 
-/* Container */
+/* ---------- Container ---------- */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -23,10 +25,11 @@ body{
   text-align: center;
 }
 
-/* Header */
+/* ---------- Header ---------- */
 header h1{
   margin: 0;
   font-size: 2.2rem;
+  font-weight: 700;
 }
 
 .subtitle{
@@ -35,58 +38,107 @@ header h1{
 }
 
 nav{
-  margin-bottom: 36px;
+  margin: 8px 0 36px 0;
 }
 
 nav a{
   margin: 0 10px;
-  color: var(--link);
   text-decoration: none;
+  color: var(--link);
 }
 
 nav a:hover{
   text-decoration: underline;
 }
 
-/* Hero figure */
-.figure-wrapper{
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 6px;
+/* ---------- Figure-style hero ---------- */
+.hero-figure{
+  margin-top: 20;
 }
 
+/* Wrapper: left content + tall probe */
+.figure-wrapper{
+  display: flex;
+  align-items: stretch;      /* probe spans full height */
+  justify-content: center;
+  gap:-10px;           /* tight spacing between traces and probe */
+}
+
+/* Left column: text above traces */
 .figure-content{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Text block (caption-like) */
 .intro-wide{
-  max-width: 760px;
-  margin-bottom: 18px;
+  max-width: 450px;
+  margin: 0 0px;
+  font-size:  1.15rem; 
+  text-align: center;
 }
 
+.links{
+  margin-top: 14px;
+}
+
+.links a{
+  color: var(--link);
+  text-decoration: none;
+}
+
+.links a:hover{
+  text-decoration: underline;
+}
+
+/* Ephys traces */
 .ephys-gif{
-  max-width: 760px;
   width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
 }
 
+/* Tall probe spanning text + traces */
 .probe-tall{
-  max-height: 540px;
+  align-self: stretch;   /* probe aligns to top of figure */
+  height: 100%;
+  max-height: 450px;   /* controls how tall the probe is */
   width: auto;
-  align-self: stretch;
 }
 
-/* About */
+/* ---------- Footer ---------- */
+footer{
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .figure-wrapper{
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .probe-tall{
+    max-height: 220px;
+  }
+}
+
+/* ---------- About page ---------- */
 .about-layout{
   display: flex;
   gap: 30px;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .headshot{
   width: 220px;
+  border-radius: 4px;
 }
 
 .about-text{
@@ -94,7 +146,7 @@ nav a:hover{
   text-align: left;
 }
 
-/* Research */
+/* ---------- Research blocks ---------- */
 .research-block{
   display: flex;
   gap: 24px;
@@ -104,35 +156,12 @@ nav a:hover{
 
 .research-img{
   width: 200px;
+  height: auto;
 }
 
-/* Publications */
+/* ---------- Publications ---------- */
 .pub-list{
+  text-align: left;
   max-width: 760px;
   margin: 20px auto;
-  text-align: left;
-}
-
-/* CV */
-.cv-frame{
-  width: 100vw;
-  height: 100vh;
-  border: none;
-}
-
-/* Responsive */
-@media (max-width: 900px){
-  .figure-wrapper{
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .probe-tall{
-    max-height: 220px;
-  }
-
-  .about-layout{
-    flex-direction: column;
-    align-items: center;
-  }
 }
