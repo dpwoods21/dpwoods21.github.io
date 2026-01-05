@@ -7,8 +7,11 @@
   <meta name="description" content="Daniel P. Woods — Neuroscience researcher"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
   <div class="container">
+
+    <!-- Header -->
     <header>
       <h1>Daniel P. Woods</h1>
       <p class="subtitle">Neuroscience Researcher</p>
@@ -21,37 +24,57 @@
       </nav>
     </header>
 
-    <main class="hero">
-      <div class="intro">
-        <p>
-          I study how cortical and neuromodulatory circuits shape physiological state, with a focus
-          on prefrontal–brainstem interactions, respiration, and state-dependent control.
-        </p>
-        <p>
-          My work combines systems neuroscience, electrophysiology, and computational modeling.
-        </p>
+    <!-- Figure-style layout -->
+    <main class="hero-figure">
 
-        <p class="links">
-          <a href="https://scholar.google.com/citations?user=lI9alGoAAAAJ&hl=en">Google Scholar</a>
-          &nbsp;•&nbsp;
-          <a href="https://github.com/dpwoods21">GitHub</a>
-          &nbsp;•&nbsp;
-          <a href="mailto:dpwoods2000@gmail.com">Email</a>
-        </p>
+      <div class="figure-wrapper">
+
+        <!-- LEFT: text above traces -->
+        <div class="figure-content">
+          <div class="intro-wide">
+            <p>
+              I study how cortical and neuromodulatory circuits shape physiological
+              state, with a focus on prefrontal–brainstem interactions, respiration,
+              and state-dependent control.
+            </p>
+
+            <p>
+              My work combines systems neuroscience, electrophysiology, and
+              computational modeling.
+            </p>
+
+            <p class="links">
+              <a href="https://scholar.google.com/citations?user=lI9alGoAAAAJ&hl=en">Google Scholar</a>
+              &nbsp;•&nbsp;
+              <a href="https://github.com/dpwoods21">GitHub</a>
+              &nbsp;•&nbsp;
+              <a href="mailto:dpwoods2000@gmail.com">Email</a>
+            </p>
+          </div>
+
+          <img
+            src="assets/img/ephys.gif"
+            alt="Multichannel ephys trace with spike rasters (animated)"
+            class="ephys-gif"
+          />
+        </div>
+
+        <!-- RIGHT: tall probe spanning text + traces -->
+        <img
+          src="assets/img/probe.png"
+          alt="Flex probe"
+          class="probe-tall"
+        />
+
       </div>
 
-      <div class="hero-media">
-        <!-- Make sure this filename matches exactly -->
-        <img src="assets/img/ephys.gif" alt="Multichannel ephys trace with spike rasters (animated)"/>
-
-        <!-- Prefer SVG; if it doesn’t show, swap to probe.png -->
-        <img class="probe" src="assets/img/probe.svg" alt="Flex probe"/>
-      </div>
     </main>
 
+    <!-- Footer -->
     <footer>
       <p>© Daniel P. Woods</p>
     </footer>
+
   </div>
 </body>
 </html>

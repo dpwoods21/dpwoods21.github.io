@@ -2,10 +2,12 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
-  --maxw: 980px;
+  --maxw: 1100px;
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
   margin: 0;
@@ -15,13 +17,15 @@ body{
   line-height: 1.6;
 }
 
+/* ---------- Container ---------- */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 48px 22px;
+  padding: 48px 24px;
   text-align: center;
 }
 
+/* ---------- Header ---------- */
 header h1{
   margin: 0;
   font-size: 2.2rem;
@@ -34,7 +38,7 @@ header h1{
 }
 
 nav{
-  margin: 8px 0 34px 0;
+  margin: 8px 0 36px 0;
 }
 
 nav a{
@@ -43,21 +47,36 @@ nav a{
   color: var(--link);
 }
 
-nav a:hover{ text-decoration: underline; }
-
-/* ---- Home hero layout ---- */
-.hero{
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 26px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
+nav a:hover{
+  text-decoration: underline;
 }
 
-.intro{
+/* ---------- Figure-style hero ---------- */
+.hero-figure{
+  margin-top: 20;
+}
+
+/* Wrapper: left content + tall probe */
+.figure-wrapper{
+  display: flex;
+  align-items: stretch;      /* probe spans full height */
+  justify-content: center;
+  gap:-70px;           /* tight spacing between traces and probe */
+}
+
+/* Left column: text above traces */
+.figure-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text block (caption-like) */
+.intro-wide{
+  max-width: 450px;
+  margin: 0 0px;
+  font-size:  1.15rem; 
   text-align: center;
-  font-size: 1.05rem;
 }
 
 .links{
@@ -68,58 +87,43 @@ nav a:hover{ text-decoration: underline; }
   color: var(--link);
   text-decoration: none;
 }
-.links a:hover{ text-decoration: underline; }
 
-.hero-media{
-  display: grid;
-  gap: 14px;
-  justify-items: center;
+.links a:hover{
+  text-decoration: underline;
 }
 
-.hero-media img{
+/* Ephys traces */
+.ephys-gif{
   width: 100%;
-  max-width: 480px;
+  max-width: 600px;
   height: auto;
   display: block;
 }
 
-.probe{
-  max-width: 240px;
-  opacity: 0.95;
+/* Tall probe spanning text + traces */
+.probe-tall{
+  align-self: stretch;   /* probe aligns to top of figure */
+  height: 100%;
+  max-height: 400px;   /* controls how tall the probe is */
+  width: auto;
 }
 
-/* ---- Inner pages ---- */
-.section{
-  margin: 34px auto 0 auto;
-  max-width: 780px;
-  text-align: left;
-}
-
-.section h2{
-  margin: 0 0 10px 0;
-  font-size: 1.3rem;
-}
-
-.cv-frame{
-  width: 100%;
-  height: 900px;
-  border: none;
-  margin-top: 24px;
-}
-
-
+/* ---------- Footer ---------- */
 footer{
-  margin-top: 56px;
-  color: var(--muted);
+  margin-top: 60px;
   font-size: 0.9rem;
+  color: var(--muted);
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 860px){
-  .hero{
-    grid-template-columns: 1fr;
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .figure-wrapper{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-  .section{
-    text-align: left;
+
+  .probe-tall{
+    max-height: 220px;
   }
 }
