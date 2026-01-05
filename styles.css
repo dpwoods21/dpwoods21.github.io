@@ -53,7 +53,7 @@ nav a:hover{
 
 /* ---------- Figure-style hero ---------- */
 .hero-figure{
-  margin-top: 12px;
+  margin-top: 20;
 }
 
 /* Wrapper: left content + tall probe */
@@ -61,7 +61,7 @@ nav a:hover{
   display: flex;
   align-items: stretch;      /* probe spans full height */
   justify-content: center;
-  gap: 6px;                  /* tight spacing between traces and probe */
+  gap:-70px;           /* tight spacing between traces and probe */
 }
 
 /* Left column: text above traces */
@@ -73,9 +73,9 @@ nav a:hover{
 
 /* Text block (caption-like) */
 .intro-wide{
-  max-width: 760px;
-  margin: 0 auto 18px auto;
-  font-size: 1.05rem;
+  max-width: 450px;
+  margin: 0 0px;
+  font-size:  1.15rem; 
   text-align: center;
 }
 
@@ -95,16 +95,16 @@ nav a:hover{
 /* Ephys traces */
 .ephys-gif{
   width: 100%;
-  max-width: 760px;
+  max-width: 600px;
   height: auto;
   display: block;
 }
 
 /* Tall probe spanning text + traces */
 .probe-tall{
-  align-self: stretch;
+  align-self: stretch;   /* probe aligns to top of figure */
   height: 100%;
-  max-height: 540px;   /* controls how tall the probe is */
+  max-height: 400px;   /* controls how tall the probe is */
   width: auto;
 }
 
@@ -120,7 +120,7 @@ footer{
   .figure-wrapper{
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   .probe-tall{
