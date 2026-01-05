@@ -17,7 +17,7 @@ body{
   line-height: 1.6;
 }
 
-/* ---------- Layout container ---------- */
+/* ---------- Container ---------- */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
@@ -53,13 +53,28 @@ nav a:hover{
 
 /* ---------- Figure-style hero ---------- */
 .hero-figure{
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
-/* Text above figure (caption-like) */
+/* Wrapper: left content + tall probe */
+.figure-wrapper{
+  display: flex;
+  align-items: stretch;      /* probe spans full height */
+  justify-content: center;
+  gap: 6px;                  /* tight spacing between traces and probe */
+}
+
+/* Left column: text above traces */
+.figure-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text block (caption-like) */
 .intro-wide{
   max-width: 760px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 18px auto;
   font-size: 1.05rem;
   text-align: center;
 }
@@ -77,14 +92,6 @@ nav a:hover{
   text-decoration: underline;
 }
 
-/* Row containing ephys + probe */
-.figure-row{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* tight adjacency */
-}
-
 /* Ephys traces */
 .ephys-gif{
   width: 100%;
@@ -93,10 +100,12 @@ nav a:hover{
   display: block;
 }
 
-/* Large probe annotation */
-.probe-large{
-  max-width: 240px;
-  height: auto;
+/* Tall probe spanning text + traces */
+.probe-tall{
+  align-self: stretch;
+  height: 100%;
+  max-height: 540px;   /* controls how tall the probe is */
+  width: auto;
 }
 
 /* ---------- Footer ---------- */
@@ -108,12 +117,13 @@ footer{
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
-  .figure-row{
+  .figure-wrapper{
     flex-direction: column;
-    gap: 16px;
+    align-items: center;
+    gap: 20px;
   }
 
-  .probe-large{
-    max-width: 180px;
+  .probe-tall{
+    max-height: 220px;
   }
 }
