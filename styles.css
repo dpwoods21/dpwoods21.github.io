@@ -2,10 +2,12 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
-  --maxw: 1180px;
+  --maxw: 1100px;
 }
 
-*{ box-sizing: border-box; }
+*{
+  box-sizing: border-box;
+}
 
 body{
   margin: 0;
@@ -15,13 +17,15 @@ body{
   line-height: 1.6;
 }
 
+/* ---------- Layout container ---------- */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 48px 22px;
+  padding: 48px 24px;
   text-align: center;
 }
 
+/* ---------- Header ---------- */
 header h1{
   margin: 0;
   font-size: 2.2rem;
@@ -34,7 +38,7 @@ header h1{
 }
 
 nav{
-  margin: 8px 0 34px 0;
+  margin: 8px 0 36px 0;
 }
 
 nav a{
@@ -43,11 +47,21 @@ nav a{
   color: var(--link);
 }
 
-nav a:hover{ text-decoration: underline; }
+nav a:hover{
+  text-decoration: underline;
+}
 
-.intro{
-  text-align: center;
+/* ---------- Figure-style hero ---------- */
+.hero-figure{
+  margin-top: 10px;
+}
+
+/* Text above figure (caption-like) */
+.intro-wide{
+  max-width: 760px;
+  margin: 0 auto 30px auto;
   font-size: 1.05rem;
+  text-align: center;
 }
 
 .links{
@@ -58,84 +72,48 @@ nav a:hover{ text-decoration: underline; }
   color: var(--link);
   text-decoration: none;
 }
-.links a:hover{ text-decoration: underline; }
 
-/* ---- Inner pages ---- */
-.section{
-  margin: 34px auto 0 auto;
-  max-width: 780px;
-  text-align: left;
+.links a:hover{
+  text-decoration: underline;
 }
 
-.section h2{
-  margin: 0 0 10px 0;
-  font-size: 1.3rem;
-}
-
-.cv-frame{
-  width: 100%;
-  height: 900px;
-  border: none;
-  margin-top: 24px;
-}
-
-
-footer{
-  margin-top: 56px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-
-/* ---- Hero layout: hard center split ---- */
-.hero{
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* exact 50 / 50 split */
-  align-items: center;
-  margin-top: 12px;
-}
-
-/* Left text column */
-.intro{
-  max-width: 520px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Right ephys column */
-.ephys-block{
-  display: flex;
-  justify-content: flex-start; /* start exactly at center */
-}
-
-/* Traces + probe grouped tightly */
-.ephys-row{
+/* Row containing ephys + probe */
+.figure-row{
   display: flex;
   align-items: center;
-  gap: 4px; /* ~2–4 px visual separation */
+  justify-content: center;
+  gap: 10px; /* tight adjacency */
 }
 
-/* Ephys GIF */
+/* Ephys traces */
 .ephys-gif{
   width: 100%;
-  max-width: 620px;
+  max-width: 760px;
   height: auto;
   display: block;
 }
 
-/* Probe immediately adjacent */
-.probe{
-  max-width: 130px;
+/* Large probe annotation */
+.probe-large{
+  max-width: 240px;
   height: auto;
 }
 
+/* ---------- Footer ---------- */
+footer{
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
-/* ---- Responsive ---- */
-@media (max-width: 860px){
-  .hero{
-    grid-template-columns: 1fr;
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .figure-row{
+    flex-direction: column;
+    gap: 16px;
   }
-  .section{
-    text-align: left;
+
+  .probe-large{
+    max-width: 180px;
   }
 }
