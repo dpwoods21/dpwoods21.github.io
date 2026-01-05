@@ -1,47 +1,117 @@
-body {
+:root{
+  --text: #111;
+  --muted: #555;
+  --link: #0b57d0;
+  --maxw: 980px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
   font-family: Georgia, serif;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 40px;
+  color: var(--text);
+  background: #fff;
   line-height: 1.6;
-  color: #222;
-  text-align: center;   /* THIS centers text */
 }
 
-header h1 {
-  margin-bottom: 0.2em;
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px 22px;
+  text-align: center;
 }
 
-.subtitle {
-  color: #555;
-  font-size: 1.1em;
-  margin-top: 0;
+header h1{
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
 }
 
-nav {
-  margin: 25px 0;
+.subtitle{
+  margin: 6px 0 18px 0;
+  color: var(--muted);
 }
 
-nav a {
-  margin: 0 12px;
+nav{
+  margin: 8px 0 34px 0;
+}
+
+nav a{
+  margin: 0 10px;
   text-decoration: none;
-  color: #0056b3;
+  color: var(--link);
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav a:hover{ text-decoration: underline; }
+
+/* ---- Home hero layout ---- */
+.hero{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
 }
 
-main {
-  margin-top: 40px;
+.intro{
+  text-align: center;
+  font-size: 1.05rem;
 }
 
-section {
-  margin-bottom: 50px;
+.links{
+  margin-top: 14px;
 }
 
-footer {
-  margin-top: 80px;
-  font-size: 0.9em;
-  color: #666;
+.links a{
+  color: var(--link);
+  text-decoration: none;
+}
+.links a:hover{ text-decoration: underline; }
+
+.hero-media{
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.hero-media img{
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+.probe{
+  max-width: 240px;
+  opacity: 0.95;
+}
+
+/* ---- Inner pages ---- */
+.section{
+  margin: 34px auto 0 auto;
+  max-width: 780px;
+  text-align: left;
+}
+
+.section h2{
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+footer{
+  margin-top: 56px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 860px){
+  .hero{
+    grid-template-columns: 1fr;
+  }
+  .section{
+    text-align: left;
+  }
 }
