@@ -12,14 +12,14 @@ body{
   font-family: Georgia, serif;
   color: var(--text);
   background: #fff;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 /* Container */
 .container{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 48px 40px;
   text-align: center;
 }
 
@@ -30,16 +30,16 @@ header h1{
 }
 
 .subtitle{
-  margin: 6px 0 18px 0;
+  margin: 5px 0 8px 0;
   color: var(--muted);
 }
 
 nav{
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 
 nav a{
-  margin: 0 10px;
+  margin: 5px 10px;
   color: var(--link);
   text-decoration: none;
 }
@@ -53,29 +53,30 @@ nav a:hover{
   display: flex;
   align-items: stretch;
   justify-content: center;
-  gap: 6px;
+  gap: 0px;
 }
 
 .figure-content{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .intro-wide{
-  max-width: 760px;
-  margin-bottom: 18px;
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 
 .ephys-gif{
-  max-width: 760px;
-  width: 100%;
+  max-width: 700px;
+  width: 90%;
 }
 
 .probe-tall{
-  max-height: 540px;
+  max-height: 400px;
   width: auto;
-  align-self: stretch;
+  align-self: center;
 }
 
 /* About */
@@ -128,11 +129,27 @@ nav a:hover{
   }
 
   .probe-tall{
-    max-height: 220px;
+    max-height: 200px;
   }
 
   .about-layout{
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* CV external link */
+.cv-external{
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.cv-external a{
+  color: var(--link);
+  text-decoration: none;
+}
+
+.cv-external a:hover{
+  text-decoration: underline;
 }
