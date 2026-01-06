@@ -138,18 +138,8 @@ nav a:hover{
   }
 }
 
-/* CV external link */
-.cv-external{
-  text-align: center;
-  padding: 8px 0;
-  font-size: 0.95rem;
-}
-
-.cv-external a{
-  color: var(--link);
-  text-decoration: none;
-}
-
-.cv-external a:hover{
-  text-decoration: underline;
+.cv-frame{
+  width: 100vw;
+  height: 100vh;
+  border: none;
 }
