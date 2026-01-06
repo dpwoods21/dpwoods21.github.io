@@ -12,6 +12,7 @@ body{
   line-height:1.6;
 }
 
+/* ---------- Container ---------- */
 .container{
   max-width: var(--maxw);
   margin:auto;
@@ -19,8 +20,35 @@ body{
   text-align:center;
 }
 
-header h1{ margin:0; }
-.subtitle{ color:var(--muted); }
+/* ---------- Header (LOCKED) ---------- */
+header{
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1{
+  margin: 0;
+  height: 2.6rem;
+  line-height: 2.6rem;
+}
+
+.subtitle{
+  height: 1.2rem;
+  line-height: 1.2rem;
+  margin: 6px 0 12px 0;
+  color: var(--muted);
+}
+
+.subtitle::after{
+  content: "___________________________";
+}
+
+nav{
+  height: 1.6rem;
+  line-height: 1.6rem;
+}
 
 nav a{
   margin:0 10px;
@@ -28,8 +56,11 @@ nav a{
   color:var(--link);
 }
 
-nav a:hover{ text-decoration:underline; }
+nav a:hover{
+  text-decoration:underline;
+}
 
+/* ---------- Home figure ---------- */
 .hero-figure{ margin-top:20px; }
 
 .figure-wrapper{
@@ -45,22 +76,38 @@ nav a:hover{ text-decoration:underline; }
   align-items:center;
 }
 
-.intro-wide{ max-width:760px; margin-bottom:18px; }
+.intro-wide{
+  max-width:760px;
+  margin-bottom:18px;
+}
 
-.ephys-gif{ max-width:760px; width:100%; }
+.ephys-gif{
+  max-width:760px;
+  width:100%;
+}
 
-.probe-tall{ max-height:540px; }
+.probe-tall{
+  max-height:540px;
+  width:auto;
+}
 
+/* ---------- About ---------- */
 .about-layout{
   display:flex;
   gap:30px;
   justify-content:center;
 }
 
-.about-image{ width:200px; }
+.about-image{
+  width:300px;
+}
 
-.about-text{ max-width:520px; text-align:left; }
+.about-text{
+  max-width:600px;
+  text-align:left;
+}
 
+/* ---------- Research ---------- */
 .research-block{
   display:flex;
   gap:24px;
@@ -68,8 +115,11 @@ nav a:hover{ text-decoration:underline; }
   align-items:center;
 }
 
-.research-img{ width:200px; }
+.research-img{
+  width:300px;
+}
 
+/* ---------- Publications ---------- */
 .pub-figure{
   max-width:500px;
   display:block;
@@ -82,17 +132,20 @@ nav a:hover{ text-decoration:underline; }
   text-align:left;
 }
 
+/* ---------- CV ---------- */
 .cv-frame{
   width:100%;
   height:90vh;
   border:none;
 }
 
+/* ---------- Footer ---------- */
 footer{
   margin-top:60px;
   color:var(--muted);
 }
 
+/* ---------- Responsive ---------- */
 @media(max-width:900px){
   .figure-wrapper,
   .about-layout,
