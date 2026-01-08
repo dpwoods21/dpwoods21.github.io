@@ -3,6 +3,8 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
+
+  --ephys-x-offset: -50px; /* 🔧 adjust this */
 }
 
 /* Force scrollbar to prevent layout shift */
@@ -11,150 +13,262 @@ html{
 }
 
 body{
-  margin:0;
+  margin: 10;
   font-family: Georgia, serif;
   color: var(--text);
-  line-height:1.6;
+  line-height: 1.65;
+  font-size: 17px;
 }
 
 /* ---------- Container ---------- */
 .container{
   max-width: var(--maxw);
-  margin:auto;
-  padding:28px 24px;   /* tightened top spacing */
-  text-align:center;
+  margin: 15px auto 40px auto;
+  padding: 28px 24px;
+  text-align: center;
 }
 
-/* ---------- Header (LOCKED) ---------- */
+/* ---------- Header (LOCKED GEOMETRY) ---------- */
+
 header{
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 3rem 1.4rem 1.8rem;
   align-items: center;
+  justify-items: center;
+  margin-bottom: 60px;
 }
 
 header h1{
   margin: 0;
-  height: 2.6rem;
-  line-height: 2.6rem;
+  font-size: 2.1rem;
+  line-height: 3rem;
+  height: 3rem;
+  white-space: nowrap;
 }
 
+header h1{
+  min-width: 22ch;
+  text-align: center;
+}
+
+
 .subtitle{
-  height: 1.2rem;
-  line-height: 1.2rem;
-  margin: 6px 0 12px 0;
-  color: var(--muted);
+  height: 1.4rem;
 }
 
 .subtitle::after{
-  content: "___________________________";
+  content: "";
+  display: block;
+  width: 400px;
+  height: 2px;
+  background: #ddd;
+  margin: 5px auto 0 auto;
 }
 
+
+/* ---------- Navigation (FIXED SLOTS) ---------- */
+
 nav{
-  height: 1.6rem;
-  line-height: 1.6rem;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  height: 2rem;
 }
 
 nav a{
-  margin:0 10px;
-  text-decoration:none;
-  color:var(--link);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;          /* 🔒 FIXED SLOT WIDTH */
+  height: 2rem;
+
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 400;
+  font-size: 0.95rem;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 }
 
+/* hover affordance */
 nav a:hover{
-  text-decoration:underline;
+  border-color: #ccc;
 }
 
-/* ---------- Home figure ---------- */
-.hero-figure{ margin-top:4px; }
-
-.figure-wrapper{
-  display:flex;
-  align-items:stretch;
-  justify-content:center;
-  gap:6px;
+/* active page */
+nav a.active{
+  border-color: var(--text);
+  background-color: rgba(0,0,0,0.03);
 }
 
-.figure-content{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+
+/* ---------- Typography ---------- */
+p{
+  max-width: 65ch;
+  margin: 0.8rem 0;
+}
+
+h2{
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.center-text{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+
+/* ---------- Home ---------- */
+.intro-wide{
+  max-width: 760px;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
 }
 
 .intro-wide{
-  max-width:760px;
-  margin-bottom:18px;
+  max-width: 760px;
+  margin: 0 auto -20px auto;
+  text-align: center;
 }
+
 
 .ephys-gif{
-  max-width:760px;
-  width:100%;
+  width: 100%;
+  max-width: 950px;
+  border-radius: 0px;
+
+  transform: translateX(var(--ephys-x-offset));
 }
 
-.probe-tall{
-  max-height:540px;
-  width:auto;
+
+/* ---------- Icons ---------- */
+.icon-links{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -10px;
+}
+
+.icon-links a{
+  width: 34px;
+  height: 34px;
+}
+
+.icon-links img{
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%) brightness(0.55);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.icon-links a:hover img,
+.icon-links a:focus img{
+  transform: translateY(-3px);
+  filter: brightness(0) saturate(100%)
+          invert(29%) sepia(91%)
+          saturate(2145%)
+          hue-rotate(203deg)
+          brightness(96%)
+          contrast(101%);
 }
 
 /* ---------- About ---------- */
 .about-layout{
-  display:flex;
-  gap:30px;
-  justify-content:center;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 40px;
 }
 
 .about-image{
-  width:300px;
-}
-
-.about-text{
-  max-width:600px;
-  text-align:left;
+  width: 100%;
+  border-radius: 6px;
 }
 
 /* ---------- Research ---------- */
 .research-block{
-  display:flex;
-  gap:24px;
-  margin:32px 0;
-  align-items:center;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin: 48px 0;
 }
 
 .research-img{
-  width:300px;
+  width: 240px;
+  border-radius: 6px;
 }
 
 /* ---------- Publications ---------- */
 .pub-figure{
-  max-width:500px;
-  display:block;
-  margin:0 auto 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 32px auto;
+  border-radius: 6px;
 }
 
 .pub-list{
-  max-width:760px;
-  margin:20px auto;
-  text-align:left;
+  list-style: none;
+  padding: 0;
 }
+
+.pub-list li{
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.pub-year{
+  color: var(--muted);
+}
+
+.pub-list{
+  margin: 24px auto 40px auto;
+  max-width: 80ch;
+  padding-left: 1.4em;
+  text-align: left;
+}
+
+.pub-list li{
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.pub-list strong{
+  font-weight: 600;
+}
+
+.pub-list a{
+  word-break: break-word;
+}
+
 
 /* ---------- CV ---------- */
 .cv-frame{
-  width:100%;
-  height:90vh;
-  border:none;
-}
-
-/* ---------- Footer ---------- */
-footer{
-  margin-top:60px;
-  color:var(--muted);
+  width: 100%;
+  height: 80vh;
+  border: none;
+  margin-top: 20px;
 }
 
 /* ---------- Responsive ---------- */
-@media(max-width:900px){
-  .figure-wrapper,
-  .about-layout,
+@media(max-width: 700px){
+  .about-layout{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
   .research-block{
-    flex-direction:column;
+    flex-direction: column;
+    text-align: center;
   }
 }
