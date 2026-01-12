@@ -295,3 +295,40 @@ h2{
     text-align: center;
   }
 }
+
+
+@media (max-width: 768px){
+
+  nav{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 10px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  nav a{
+    width: 100%;          /* fill grid cell */
+    height: auto;
+    padding: 8px 10px;
+
+    font-size: 0.9rem;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;  /* prevent word breaks */
+  }
+
+  /* disable desktop optical offset on mobile */
+  .ephys-gif{
+    transform: none;
+  }
+}
+
+@media (max-width: 400px){
+  nav{
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+}
+
