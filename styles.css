@@ -4,7 +4,13 @@
   --muted: #555;
   --link: #0b57d0;
 
-  --ephys-x-offset: -50px; /* 🔧 adjust this */
+  --ephys-x-offset: -50px; /* 🔧 adjust this (desktop only) */
+}
+
+/* ---------- Global Safety ---------- */
+
+*, *::before, *::after{
+  box-sizing: border-box;
 }
 
 /* Force scrollbar to prevent layout shift */
@@ -18,6 +24,9 @@ body{
   color: var(--text);
   line-height: 1.65;
   font-size: 17px;
+
+  /* 🔒 prevent horizontal scroll on mobile */
+  overflow-x: hidden;
 }
 
 /* ---------- Container ---------- */
@@ -54,7 +63,10 @@ header h1{
 .subtitle::after{
   content: "";
   display: block;
-  width: 400px;
+
+  /* 🔒 responsive-safe divider */
+  width: min(400px, 90vw);
+
   height: 2px;
   background: #ddd;
   margin: 5px auto 0 auto;
@@ -129,6 +141,8 @@ h2{
   width: 100%;
   max-width: 950px;
   border-radius: 0;
+
+  /* 🔧 desktop optical centering */
   transform: translateX(var(--ephys-x-offset));
 }
 
@@ -268,14 +282,16 @@ h2{
     font-size: 0.9rem;
   }
 
+  /* 🔒 disable desktop optical offset on mobile */
+  .ephys-gif{
+    transform: none;
+  }
 }
 
 /* About page stack */
 @media (max-width: 700px){
-
   .about-layout{
     grid-template-columns: 1fr;
     text-align: center;
   }
-
 }
