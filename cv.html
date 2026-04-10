@@ -4,44 +4,59 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>CV — Daniel P. Woods</title>
+  <title>Daniel P. Woods CV</title>
+  <meta name="description" content="Curriculum Vitae of Daniel P. Woods. View the embedded CV or open it in a new tab.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css"/>
 
   <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RMV23G0RS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9RMV23G0RS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-9RMV23G0RS', {
-    anonymize_ip: true
-  });
-</script>
-
+    gtag('config', 'G-9RMV23G0RS', {
+      anonymize_ip: true
+    });
+  </script>
 </head>
 
 <body>
 <div class="container">
 
-<header>
-  <h1>Daniel P. Woods</h1>
-  <p class="subtitle"></p>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Research</a>
-  <a href="publications.html">Publications</a>
-  <a href="cv.html" class="active">CV</a>
-</nav>
+  <header>
+    <h1>Daniel P. Woods</h1>
+    <p class="subtitle"></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html" class="active">CV</a>
+    </nav>
+  </header>
 
-</header>
+  <main>
+    <h2>Curriculum Vitae</h2>
+    <p>
+      If the embedded viewer loads slowly, you can
+      <a href="assets/pdf/Woods_CV.pdf" target="_blank" rel="noopener noreferrer">open the CV in a new tab</a>
+      or
+      <a href="assets/pdf/Woods_CV.pdf" download>download the PDF</a>.
+    </p>
 
-
-<iframe src="assets/pdf/Woods_CV.pdf"
-        class="cv-frame"
-        title="Daniel P. Woods CV"></iframe>
+    <object
+      data="assets/pdf/Woods_CV.pdf"
+      type="application/pdf"
+      class="cv-frame"
+      aria-label="Daniel P. Woods CV PDF viewer">
+      <p>
+        Your browser could not display the embedded CV.
+        <a href="assets/pdf/Woods_CV.pdf" target="_blank" rel="noopener noreferrer">Open the CV here</a>.
+      </p>
+    </object>
+  </main>
 
 </div>
 </body>
