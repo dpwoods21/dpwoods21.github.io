@@ -151,12 +151,19 @@ h2{
   justify-content: center;
   align-items: center;
   
-  /* 1. INCREASE SPACING: Increased from 20px to 40px */
-  gap: 40px;       
+  /* 1. WIDER HORIZONTAL SPACING */
+  /* Increased from 40px to 60px to spread them out across the screen */
+  gap: 60px;       
 
-  /* 2. MOVE UP: A negative margin pulls the element UP the screen. 
-     Increase the negative number (e.g., -40px) to move it even higher. */
-  margin-top: -30px; 
+  /* 2. BUMP UP FURTHER */
+  /* Changed from -30px to -80px. This pulls them significantly higher 
+     toward (or over) the bottom of the GIF */
+  margin-top: -80px; 
+  
+  /* 3. DEPTH SENSITIVITY */
+  /* Ensures icons stay "on top" of any overlapping elements */
+  position: relative;
+  z-index: 10;
   
   flex-wrap: wrap;
 }
