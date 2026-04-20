@@ -146,37 +146,47 @@ h2{
   transform: translateX(var(--ephys-x-offset));
 }
 
-/* The container holding all links */
 .icon-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;       /* Adjust this for space between icons */
-  margin-top: 30px;
+  
+  /* 1. INCREASE SPACING: Increased from 20px to 40px */
+  gap: 40px;       
+
+  /* 2. MOVE UP: A negative margin pulls the element UP the screen. 
+     Increase the negative number (e.g., -40px) to move it even higher. */
+  margin-top: -30px; 
+  
+  flex-wrap: wrap;
 }
 
-/* THE KEY: Give the 'a' tag a fixed square size */
 .icon-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;     /* Change this to 40px if you want them bigger */
+  width: 32px;     
   height: 32px;
+  text-decoration: none;
 }
 
-/* Force the image to stay inside that square without stretching */
 .icon-links img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* Keeps proportions perfect */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   filter: grayscale(100%) brightness(0.55);
-  transition: all 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover effects */
-.icon-links a:hover img {
+.icon-links a:hover img,
+.icon-links a:focus img {
   transform: translateY(-3px);
-  filter: brightness(0) saturate(100%) invert(29%) sepia(91%) saturate(2145%) hue-rotate(203deg);
+  filter: brightness(0) saturate(100%) 
+          invert(29%) sepia(91%) 
+          saturate(2145%) 
+          hue-rotate(203deg) 
+          brightness(96%) 
+          contrast(101%);
 }
 
 /* ---------- About ---------- */
