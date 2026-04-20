@@ -154,9 +154,21 @@ h2{
   margin-top: -10px;
 }
 
-.icon-links a{
-  width: 34px;
-  height: 34px;
+/* This targets all images inside your icon-links div */
+.icon-links img {
+  width: 32px;      /* Set your desired width */
+  height: 32px;     /* Match the width to keep it square */
+  object-fit: contain; /* Ensures the SVG doesn't stretch weirdly */
+  margin: 0 8px;    /* Adds a little breathing room between icons */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Optional: Center the icons within the div */
+.icon-links {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* An alternative to margin for even spacing */
 }
 
 .icon-links img{
