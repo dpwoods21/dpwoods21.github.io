@@ -188,12 +188,85 @@ h2{
 .icon-links a:hover img,
 .icon-links a:focus img {
   transform: translateY(-3px);
-  filter: brightness(0) saturate(100%) 
-          invert(29%) sepia(91%) 
-          saturate(2145%) 
-          hue-rotate(203deg) 
-          brightness(96%) 
+}
+
+/* Google Scholar — light blue */
+.icon-links a[href*="scholar"]:hover img,
+.icon-links a[href*="scholar"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(66%) sepia(65%)
+          saturate(1227%)
+          hue-rotate(176deg)
+          brightness(102%)
+          contrast(97%);
+}
+
+/* GitHub — purple */
+.icon-links a[href*="github"]:hover img,
+.icon-links a[href*="github"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(32%) sepia(38%)
+          saturate(1037%)
+          hue-rotate(248deg)
+          brightness(94%)
+          contrast(92%);
+}
+
+/* Email / Gmail — Google red */
+.icon-links a[href^="mailto:"]:hover img,
+.icon-links a[href^="mailto:"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(32%) sepia(99%)
+          saturate(1803%)
+          hue-rotate(343deg)
+          brightness(95%)
+          contrast(95%);
+}
+
+/* LinkedIn — dark blue */
+.icon-links a[href*="linkedin"]:hover img,
+.icon-links a[href*="linkedin"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(21%) sepia(95%)
+          saturate(1761%)
+          hue-rotate(186deg)
+          brightness(91%)
           contrast(101%);
+}
+
+/* Substack — orange */
+.icon-links a[href*="substack"]:hover img,
+.icon-links a:focus[href*="substack"] img {
+  filter: brightness(0) saturate(100%)
+          invert(56%) sepia(93%)
+          saturate(2405%)
+          hue-rotate(1deg)
+          brightness(102%)
+          contrast(103%);
+}
+
+/* ORCID — green */
+.icon-links a[href*="orcid"]:hover img,
+.icon-links a[href*="orcid"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(56%) sepia(76%)
+          saturate(463%)
+          hue-rotate(59deg)
+          brightness(94%)
+          contrast(89%);
+}
+
+/* Gonzales Lab — purplish */
+.icon-links a[href*="gonzales"]:hover img,
+.icon-links a[href*="gonzales"]:focus img,
+.icon-links a[href*="lab"]:hover img,
+.icon-links a[href*="lab"]:focus img {
+  filter: brightness(0) saturate(100%)
+          invert(29%) sepia(34%)
+          saturate(1118%)
+          hue-rotate(247deg)
+          brightness(92%)
+          contrast(93%);
 }
 
 /* ---------- About ---------- */
