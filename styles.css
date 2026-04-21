@@ -3,8 +3,11 @@
   --text: #111;
   --muted: #555;
   --link: #0b57d0;
+  --border: #ddd;
+  --border-dark: #ccc;
+  --surface: rgba(0, 0, 0, 0.03);
 
-  --ephys-x-offset: -50px; /* 🔧 adjust this (desktop only) */
+  --ephys-x-offset: -40px; /* desktop-only optical adjustment */
 }
 
 /* ---------- Global Safety ---------- */
@@ -13,7 +16,6 @@
   box-sizing: border-box;
 }
 
-/* Force scrollbar to prevent layout shift */
 html{
   overflow-y: scroll;
 }
@@ -24,12 +26,25 @@ body{
   color: var(--text);
   line-height: 1.65;
   font-size: 17px;
-
-  /* 🔒 prevent horizontal scroll on mobile */
+  background: #fff;
   overflow-x: hidden;
 }
 
+img{
+  max-width: 100%;
+  display: block;
+}
+
+a{
+  color: var(--link);
+}
+
+a:hover{
+  text-decoration-thickness: 2px;
+}
+
 /* ---------- Container ---------- */
+
 .container{
   max-width: var(--maxw);
   margin: 15px auto 40px auto;
@@ -37,13 +52,14 @@ body{
   text-align: center;
 }
 
-/* ---------- Header (LOCKED GEOMETRY) ---------- */
+/* ---------- Header ---------- */
+
 header{
   display: grid;
   grid-template-rows: 3rem 1.4rem 1.8rem;
   align-items: center;
   justify-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 56px;
 }
 
 header h1{
@@ -54,6 +70,8 @@ header h1{
   min-width: 22ch;
   white-space: nowrap;
   text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .subtitle{
@@ -63,16 +81,14 @@ header h1{
 .subtitle::after{
   content: "";
   display: block;
-
-  /* 🔒 responsive-safe divider */
   width: min(400px, 90vw);
-
   height: 2px;
-  background: #ddd;
+  background: var(--border);
   margin: 5px auto 0 auto;
 }
 
-/* ---------- Navigation (DESKTOP: FIXED SLOTS) ---------- */
+/* ---------- Navigation ---------- */
+
 nav{
   display: flex;
   justify-content: center;
@@ -84,33 +100,35 @@ nav a{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  width: 120px;       /* 🔒 desktop lock */
+  width: 120px;
   height: 2rem;
-
   text-decoration: none;
   color: var(--text);
   font-weight: 400;
   font-size: 0.95rem;
-
   border: 1px solid transparent;
   border-radius: 4px;
-
   transition:
     border-color 0.15s ease,
-    background-color 0.15s ease;
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 nav a:hover{
-  border-color: #ccc;
+  border-color: var(--border-dark);
 }
 
 nav a.active{
   border-color: var(--text);
-  background-color: rgba(0,0,0,0.03);
+  background-color: var(--surface);
 }
 
 /* ---------- Typography ---------- */
+
+main{
+  display: block;
+}
+
 p{
   max-width: 65ch;
   margin: 0.8rem 0;
@@ -118,7 +136,8 @@ p{
 
 h2{
   font-size: 1.35rem;
-  margin-bottom: 0.4rem;
+  margin: 0 0 0.55rem 0;
+  font-weight: 600;
 }
 
 .center-text{
@@ -129,55 +148,59 @@ h2{
   font-size: 0.95rem;
 }
 
+.page-intro{
+  max-width: 760px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.02rem;
+  color: var(--text);
+}
+
 /* ---------- Home ---------- */
+
 .intro-wide{
   max-width: 760px;
-  margin: 0 auto -10px auto;
+  margin: 0 auto 0 auto;
   font-size: 1.05rem;
   text-align: center;
+}
+
+.hero-figure{
+  margin-top: 4px;
+}
+
+.figure-wrapper,
+.figure-content{
+  width: 100%;
 }
 
 .ephys-gif{
   width: 100%;
   max-width: 950px;
   border-radius: 0;
-
-  /* 🔧 desktop optical centering */
   transform: translateX(var(--ephys-x-offset));
 }
 
-.icon-links {
+.icon-links{
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  /* 1. WIDER HORIZONTAL SPACING */
-  /* Increased from 40px to 60px to spread them out across the screen */
-  gap: 60px;       
-
-  /* 2. BUMP UP FURTHER */
-  /* Changed from -30px to -80px. This pulls them significantly higher 
-     toward (or over) the bottom of the GIF */
-  margin-top: -30px; 
-  
-  /* 3. DEPTH SENSITIVITY */
-  /* Ensures icons stay "on top" of any overlapping elements */
+  gap: 52px;
+  margin-top: -22px;
   position: relative;
   z-index: 10;
-  
   flex-wrap: wrap;
 }
 
-.icon-links a {
+.icon-links a{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;     
+  width: 32px;
   height: 32px;
   text-decoration: none;
 }
 
-.icon-links img {
+.icon-links img{
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -186,13 +209,13 @@ h2{
 }
 
 .icon-links a:hover img,
-.icon-links a:focus img {
+.icon-links a:focus img{
   transform: translateY(-3px);
 }
 
 /* Google Scholar — light blue */
 .icon-links a[href*="scholar"]:hover img,
-.icon-links a[href*="scholar"]:focus img {
+.icon-links a[href*="scholar"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(66%) sepia(65%)
           saturate(1227%)
@@ -203,7 +226,7 @@ h2{
 
 /* GitHub — purple */
 .icon-links a[href*="github"]:hover img,
-.icon-links a[href*="github"]:focus img {
+.icon-links a[href*="github"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(32%) sepia(38%)
           saturate(1037%)
@@ -212,9 +235,9 @@ h2{
           contrast(92%);
 }
 
-/* Email / Gmail — Google red */
+/* Email / Gmail — red */
 .icon-links a[href^="mailto:"]:hover img,
-.icon-links a[href^="mailto:"]:focus img {
+.icon-links a[href^="mailto:"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(32%) sepia(99%)
           saturate(1803%)
@@ -225,7 +248,7 @@ h2{
 
 /* LinkedIn — dark blue */
 .icon-links a[href*="linkedin"]:hover img,
-.icon-links a[href*="linkedin"]:focus img {
+.icon-links a[href*="linkedin"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(21%) sepia(95%)
           saturate(1761%)
@@ -236,7 +259,7 @@ h2{
 
 /* Substack — orange */
 .icon-links a[href*="substack"]:hover img,
-.icon-links a:focus[href*="substack"] img {
+.icon-links a[href*="substack"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(56%) sepia(93%)
           saturate(2405%)
@@ -247,7 +270,7 @@ h2{
 
 /* ORCID — green */
 .icon-links a[href*="orcid"]:hover img,
-.icon-links a[href*="orcid"]:focus img {
+.icon-links a[href*="orcid"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(56%) sepia(76%)
           saturate(463%)
@@ -260,7 +283,7 @@ h2{
 .icon-links a[href*="gonzales"]:hover img,
 .icon-links a[href*="gonzales"]:focus img,
 .icon-links a[href*="lab"]:hover img,
-.icon-links a[href*="lab"]:focus img {
+.icon-links a[href*="lab"]:focus img{
   filter: brightness(0) saturate(100%)
           invert(29%) sepia(34%)
           saturate(1118%)
@@ -270,12 +293,14 @@ h2{
 }
 
 /* ---------- About ---------- */
+
 .about-layout{
   display: grid;
   grid-template-columns: 260px 1fr;
   gap: 40px;
   align-items: center;
   margin-top: 40px;
+  text-align: left;
 }
 
 .about-image{
@@ -283,7 +308,13 @@ h2{
   border-radius: 6px;
 }
 
-/* ---------- Research Tiles ---------- */
+.about-text p{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ---------- Research ---------- */
+
 .research-grid{
   margin-top: 40px;
   display: grid;
@@ -293,7 +324,7 @@ h2{
 }
 
 .research-tile{
-  max-width: 300px;
+  max-width: 320px;
   text-align: center;
 }
 
@@ -301,7 +332,7 @@ h2{
   width: 100%;
   max-width: 260px;
   border-radius: 6px;
-  margin-bottom: 16px;
+  margin: 0 auto 16px auto;
 }
 
 .research-tile h2{
@@ -310,12 +341,14 @@ h2{
 }
 
 .research-tile p{
-  margin: 0;
+  margin: 0 auto;
   font-size: 0.95rem;
   line-height: 1.5;
+  max-width: 30ch;
 }
 
 /* ---------- Publications ---------- */
+
 .pub-figure{
   width: 100%;
   max-width: 400px;
@@ -327,13 +360,13 @@ h2{
   list-style: none;
   margin: 24px auto 40px auto;
   max-width: 80ch;
-  padding-left: 1.4em;
+  padding-left: 0;
   text-align: left;
 }
 
 .pub-list li{
   margin-bottom: 24px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .pub-list strong{
@@ -349,29 +382,36 @@ h2{
 }
 
 /* ---------- CV ---------- */
-.cv-frame {
+
+.cv-frame{
   width: 100%;
   height: 85vh;
   border: none;
   display: block;
+  margin-top: 16px;
 }
 
-/* ---------- Responsive: Mobile Overrides ---------- */
+/* ---------- Responsive: Mobile ---------- */
 
-/* =========================================================
-   MOBILE HEADER + NAV — FINAL, SAFE, CROSS-BROWSER FIX
-   ========================================================= */
+@media (max-width: 900px){
+  .about-layout{
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+  }
+
+  .icon-links{
+    gap: 40px;
+  }
+}
 
 @media (max-width: 768px){
 
-  /* 1. Let the header grow naturally on mobile */
   header{
     grid-template-rows: auto auto auto;
     row-gap: 12px;
     margin-bottom: 32px;
   }
 
-  /* 2. Reduce title footprint slightly */
   header h1{
     font-size: 1.8rem;
     line-height: 2.2rem;
@@ -380,7 +420,6 @@ h2{
     white-space: normal;
   }
 
-  /* 3. Make divider bar responsive + compact */
   .subtitle{
     height: auto;
   }
@@ -391,7 +430,6 @@ h2{
     margin: 6px auto 0 auto;
   }
 
-  /* 4. Switch nav to grid that fits viewport */
   nav{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -402,35 +440,60 @@ h2{
     margin-top: 4px;
   }
 
-  /* 5. Shrink nav buttons safely */
   nav a{
     width: 100%;
     height: auto;
-
     padding: 6px 8px;
     font-size: 0.85rem;
     line-height: 1.2;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  /* 6. Prevent active state from increasing size */
   nav a.active{
     background-color: rgba(0,0,0,0.04);
     border-width: 1px;
   }
 
-  /* 7. Disable desktop-only optical offsets */
   .ephys-gif{
     transform: none;
   }
-}
 
-/* =========================================================
-   EXTRA SAFETY FOR VERY SMALL PHONES
-   ========================================================= */
+  .intro-wide,
+  .page-intro{
+    font-size: 1rem;
+  }
+
+  .icon-links{
+    gap: 30px;
+    margin-top: -12px;
+  }
+
+  .about-layout{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .about-image{
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-text{
+    text-align: left;
+  }
+
+  .research-grid{
+    gap: 36px;
+  }
+
+  .cv-frame{
+    height: 75vh;
+  }
+}
 
 @media (max-width: 420px){
 
@@ -441,5 +504,14 @@ h2{
   nav a{
     font-size: 0.85rem;
     padding: 7px 10px;
+  }
+
+  .icon-links{
+    gap: 24px;
+  }
+
+  .icon-links a{
+    width: 30px;
+    height: 30px;
   }
 }
