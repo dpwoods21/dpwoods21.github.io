@@ -1,12 +1,18 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Daniel P. Woods | Research and Personal Website</title>
-  <meta name="description" content="Official personal website of Daniel P. Woods, featuring research, publications, CV, and contact information.">
+  <title>Daniel P. Woods | Neuroscience & Neural Interfaces</title>
+  <meta name="description" content="Daniel P. Woods is a Biomedical Engineering PhD student at Vanderbilt University studying flexible neural interfaces, electrophysiology, and systems neuroscience in nonhuman primates.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css"/>
+
+  <meta property="og:title" content="Daniel P. Woods | Neuroscience & Neural Interfaces">
+  <meta property="og:description" content="Research in flexible neural interfaces, electrophysiology, and systems neuroscience in nonhuman primates.">
+  <meta property="og:url" content="https://dpwoods21.github.io/">
+  <meta property="og:type" content="website">
 
   <script type="application/ld+json">
   {
@@ -18,22 +24,25 @@
       "https://github.com/dpwoods21",
       "https://www.linkedin.com/in/danielwoods21/",
       "https://scholar.google.com/citations?user=lI9alGoAAAAJ&hl=en",
-      "https://dpwoods21.substack.com/"
+      "https://dpwoods21.substack.com/",
       "https://orcid.org/0000-0002-2453-4010"
     ],
-    "description": "Official personal website of Daniel P. Woods featuring research, publications, CV, and contact information."
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Vanderbilt University"
+    },
+    "description": "Biomedical Engineering PhD student studying flexible neural interfaces, electrophysiology, and systems neuroscience in nonhuman primates."
   }
   </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9RMW23G0RS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9RMW23G0RS');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9RMW23G0RS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9RMW23G0RS');
+  </script>
 </head>
 
 <body>
@@ -42,17 +51,14 @@
 <header>
   <h1>Daniel P. Woods</h1>
   <p class="subtitle"></p>
-<nav>
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Research</a>
-  <a href="publications.html">Publications</a>
-  <a href="cv.html">CV</a>
-</nav>
-
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+  </nav>
 </header>
-
-
 
 <main class="hero-figure">
   <div class="figure-wrapper">
@@ -60,12 +66,13 @@
 
       <div class="intro-wide">
         <p>
-          I study how flexible microelectrodes can be used to advance research
-          for applications in chronic neural interfaces and optogenetics in
-          nonhuman primates.
+          I develop flexible neural interfaces for stable electrophysiology and optogenetics in behaving nonhuman primates.
         </p>
         <p>
-          My work combines microfabrication, electrophysiology, and systems neuroscience.
+          My work combines microfabrication, implantation strategy, and systems neuroscience to study how cortical circuits regulate physiological state.
+        </p>
+        <p class="center-text">
+          PhD student in Biomedical Engineering at Vanderbilt University · Gonzales Lab
         </p>
       </div>
 
@@ -110,8 +117,8 @@
 
         <a href="https://orcid.org/0000-0002-2453-4010"
            target="_blank" rel="noopener noreferrer"
-           title="ORCiD"
-           aria-label="ORCiD">
+           title="ORCID"
+           aria-label="ORCID">
           <img src="assets/icons/ORCID_iD.svg" alt="">
         </a>
 
